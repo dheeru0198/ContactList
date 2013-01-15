@@ -17,7 +17,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
- 
+
+//An adapter to display the data in list view.
 public class CustomListViewAdapter extends ArrayAdapter<RowItem> implements SectionIndexer {
  
     Context context;
@@ -53,7 +54,7 @@ public class CustomListViewAdapter extends ArrayAdapter<RowItem> implements Sect
         sectionList.toArray(sections);
     }
  
-    /*private view holder class*/
+    //private view holder class
     private class ViewHolder {
         ImageView imageView;
         TextView txtName;

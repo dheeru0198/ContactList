@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 
+//An activity that displays a single contact details with a functionality to make calls and send messages.
 public class DisplayContactActivity extends Activity {
 	
 	TextView nameView;

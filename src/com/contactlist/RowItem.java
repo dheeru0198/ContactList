@@ -2,6 +2,7 @@ package com.contactlist;
 
 import android.graphics.Bitmap;
 
+//A custom RowItem class that manages the contact details shown in the list view
 public class RowItem {
 	private Bitmap image;
     private String name;

@@ -32,8 +32,13 @@ public class MainActivity extends Activity {
 		getContactsDetails();
 	}
 
+	//Method to retrieve Contact details from the phone database and display in the app in a list view
 	private void getContactsDetails() {
+		
+		//A Progress dialog with a spinning wheel, to instruct the user about the app's current state
 		final ProgressDialog dialog = ProgressDialog.show(MainActivity.this, "Please Wait", "Retrieving Contacts...", true);
+		
+		//A new worker thread is created to retrieve and display the contacts.
 		new Thread(new Runnable() {
 			public void run() {
 				
@@ -43,6 +48,7 @@ public class MainActivity extends Activity {
 				ArrayList<String> contactNumbers = new ArrayList<String>();
 				ArrayList<Bitmap> contactImages = new ArrayList<Bitmap>();
 		
+				//The 'noImage' is used wherever an image of a contact is not present in the database.
 				Bitmap noImage = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
 		
 				Cursor phones = getContentResolver().query(
@@ -67,12 +73,12 @@ public class MainActivity extends Activity {
 					InputStream photo_stream = ContactsContract.Contacts.openContactPhotoInputStream
 							(getContentResolver(), contact_Uri);
 					
-					if (photo_stream != null) {
+					if (photo_stream != null) { //Retrieve and add image if present in database
 						BufferedInputStream buf = new BufferedInputStream(photo_stream,8192);
 						Bitmap image = BitmapFactory.decodeStream(buf);
 						contactImages.add(image);
 					}
-					else {
+					else {	//otherwise add 'noImage'
 						contactImages.add(noImage);
 					}
             
@@ -106,6 +112,7 @@ public class MainActivity extends Activity {
 		        
 						listView.setClickable(true);
 		        
+						//Assign a click listener to the rows of the list view which runs a new activity with the contact page to make calls and send messages.
 						listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
 		            
 							@Override
