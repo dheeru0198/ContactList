@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Contact List</string>
+    <string name="image">Contacs Image</string>
+    <string name="title_activity_display_contact">DisplayContactActivity</string>
+    <string name="contact_name">Contact Name :</string>
+    <string name="contact_number">Contact Number :</string>
+    <string name="button_msg">Send Message</string>
+    <string name="button_call">Make Call</string>
+
+</resources>

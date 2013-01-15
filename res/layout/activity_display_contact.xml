@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayContactActivity" >
+
+    <ImageView
+        android:id="@+id/cImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/image"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/cName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/cImage"
+        android:layout_marginLeft="28dp" />
+
+    <TextView
+        android:id="@+id/cNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignLeft="@+id/cName" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="46dp"
+        android:layout_marginLeft="18dp"
+        android:text="@string/contact_name" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_centerVertical="true"
+        android:text="@string/contact_number" />
+
+    <Button
+        android:id="@+id/callButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/msgButton"
+        android:layout_alignBottom="@+id/msgButton"
+        android:layout_toRightOf="@+id/cImage"
+        android:text="@string/button_call"
+        android:onClick="makeCall" />
+
+    <Button
+        android:id="@+id/msgButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="68dp"
+        android:text="@string/button_msg"
+        android:onClick="sendMessage" />
+
+</RelativeLayout>
