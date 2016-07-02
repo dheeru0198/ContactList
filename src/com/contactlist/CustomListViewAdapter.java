@@ -40,7 +40,9 @@ public class CustomListViewAdapter extends ArrayAdapter<RowItem> implements Sect
         	
         	ch = ch.toUpperCase();
         	
-        	alphaIndexer.put(ch,  i);
+        	if (alphaIndexer.get(ch) == null) {
+                	alphaIndexer.put(ch, i);
+            	}
         }
         
         Set<String> sectionLetters = alphaIndexer.keySet();
